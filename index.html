@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicita tu Tarjeta de Lealtad Retroactiva</title>
+  <style>
+    @font-face {
+      font-family: "RosveliT";
+      src: url("https://files.fontsme.com/r/675/22675/file/rosvelit-regular.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #fdfcfa;
+      color: #1e1e1e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .branding {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .branding .nombre {
+      font-family: "RosveliT", serif;
+      font-size: 2.2rem;
+      line-height: 1.1;
+    }
+
+    .branding .subtitulo {
+      font-family: system-ui, sans-serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-top: 0.2rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .instructions {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .link-button {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      background-color: #1e1e1e;
+      color: #f4ede8;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .link-button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="branding">
+    <div class="nombre">Ale Solano</div>
+    <div class="subtitulo">Piercing</div>
+  </div>
+
+  <h1>¡Solicita tus Puntos de Lealtad Retroactivos!</h1>
+
+  <p class="instructions">
+    Haz clic en el botón para abrir tu aplicación de correo con el formato ya prellenado.<br />
+    Revisa y completa los datos solicitados antes de enviarlo.
+  </p>
+
+  <a id="emailLink" class="link-button" target="_blank" rel="noopener">
+    Enviar solicitud
+  </a>
+
+  <script>
+    const to = "josea0499.js@gmail.com";
+    const subject = encodeURIComponent("[Tu Nombre] - Solicitud de Puntos de Lealtad Retroactivos.");
+    const body = encodeURIComponent(`Hola,
+
+
+1. Nombre completo y número de cédula:
+- [Llenar aquí]
+
+2. Captura de pantalla del QR de tu perfil de cliente - (Obtener en: https://loyl.me/alesolano)
+- [Llenar aquí]
+
+3. Lista de servicios previos en el formato del siguiente ejemplo - (Ejemplo: “downsize del nostril con joya de titanio, abril 2024”)
+- [Llenar aquí]
+
+
+Referencias (opcional):
+
+1. Nombre de la persona referida o de quién te refirió:
+- [Llenar aquí]
+
+2. Fecha aproximada del servicio de la persona:
+- [Llenar aquí]
+
+
+¡Gracias!`);
+
+    document.getElementById("emailLink").href = `mailto:${to}?subject=${subject}&body=${body}`;
+  </script>
+</body>
+</html>
